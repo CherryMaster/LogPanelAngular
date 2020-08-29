@@ -1,0 +1,11 @@
+<div>
+  <label for="email">Nowy Email</label><br>
+  <input id="email" type="text" [(ngModel)]="newEmail"><br>
+  <label for="newLogin">Nowy Login</label><br>
+  <input id="newLogin" type="text" [(ngModel)]="newLogin"><br>
+  <label for="newPassword">Nowe Hasło</label><br>
+  <input id="newPassword" type="password" [(ngModel)]="newPassword"><br>
+  <label for="repeatPassword">Powtórz Hasło</label><br>
+  <input id="repeatPassword" type="password" [(ngModel)]="repeated"><br>
+  <button (click)="newAccount()">Utwórz konto!</button>
+</div>

@@ -1,0 +1,21 @@
+<div>
+  <label for="login">Login lub Email</label><br>
+  <input id="login" type="text" [(ngModel)]="actLogin"><br>
+  <label for="password">Hasło</label><br>
+  <input id="password" type="password" [(ngModel)]="actPassword"><br>
+  <a href="#" (click)="toRegPanel()">Nie masz jeszcze konta? Załóż je teraz!</a><br>
+  <button (click)="isLogged()">Zaloguj</button>
+  <ng-container *ngIf="actLogMode; else notLogged">
+    <p>Jesteś zalogowany :)</p>
+  </ng-container>
+  <ng-template #notLogged>
+    <ng-container *ngIf="actExistMode; else notExists">
+      <p>Nie zalogowano pomyślnie, niepoprawne hasło 😞 </p>
+    </ng-container>
+    <ng-template #notExists>
+      <ng-container *ngIf="alertActive">
+        <p>Konto nie istnieje :(</p>
+      </ng-container>
+    </ng-template>
+  </ng-template>
+</div>
