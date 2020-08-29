@@ -1,0 +1,12 @@
+<div>
+  <ng-container *ngIf="!regPanelActive; else isActive">
+    <app-logpanel (setActive)="backToPanel($event)" [accounts]="accounts"></app-logpanel>
+  </ng-container>
+  <ng-template #isActive>
+    <app-regpanel 
+      (setInactive)="backToPanel($event)" 
+      (createdAccount)="addNewAccount($event)"
+      [accounts]="accounts"
+    ></app-regpanel>
+  </ng-template>
+</div>
